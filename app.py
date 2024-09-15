@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 app = Flask(__name__)
+port = 5000
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -181,4 +182,4 @@ def display_calendar(start_date, end_date, project_timeline):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=port)
