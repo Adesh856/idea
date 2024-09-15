@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Timeline</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Project Timeline</h1>
+        <form action="/" method="post">
+            <label for="project_type">Project Type:</label>
+            <select name="project_type" id="project_type" required>
+                <option value="">Select Project Type</option>
+                <option value="1">Minor Change</option>
+                <option value="2">Adapt Project</option>
+            </select><br>
+
+            <label for="project_name">Project Name:</label>
+            <input type="text" name="project_name" id="project_name" required><br>
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" name="start_date" id="start_date" required><br>
+
+            <button type="submit">Generate Timeline</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
